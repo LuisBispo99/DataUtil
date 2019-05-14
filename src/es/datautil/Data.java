@@ -14,12 +14,14 @@ public class Data {
 		// IMPLEMENTAR
 		// Implemente a lógica a partir do Fluxograma dado em anexo!
 		
+		if(ano % 4 == 0 && ano % 100 == 0 && ano % 400 == 0){
+			return true;
+		} else if (ano % 4 == 0) {
+			return true;
+		} else {
+			return false;
+		}
 		
-		
-		
-		
-		
-		return true;
 	}
 	
 	
@@ -35,8 +37,13 @@ public class Data {
 		// IMPLEMENTAR
 		// Implemente a lógica a partir do Fluxograma dado em anexo!
 		
-		
-		return 0;
+		if ((mes.getNumeroMes() <= 7 && mes.getNumeroMes() % 2 != 0) || (mes.getNumeroMes() >= 8 && mes.getNumeroMes() % 2 == 0))  {
+			return 31;
+		}
+		else {
+			return 30;
+		}
+
 	}
 	
 
@@ -53,13 +60,19 @@ public class Data {
 	{
 		// Testa se o ano é bisseexto caso o mes seja Meses.FEVEREIRO
 		
-			
-		
 		// Se não for Meses.FEVEREIRO, ignora o ano e chama o método diasMes(mes)
 		
 		
-		
-		return 0;
+		if (mes==Meses.FEVEREIRO) {
+			if (anoBissexto(ano)==true) {
+				return 29;
+			}return 28;
+			
+		}else {
+			if (diasMes(mes)==31) {
+				return 31;
+			}else {return 30;}
+		}
 	}
 
 	
